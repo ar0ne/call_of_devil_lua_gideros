@@ -6,6 +6,7 @@
   <folder name="sounds"/>
   <folder name="images">
    <file source="assets/images/background.png"/>
+   <file source="assets/images/bg_game_over_scene.png"/>
    <file source="assets/images/bg_menu_scene.png"/>
    <file source="assets/images/bg_settings_scene.png"/>
    <file source="assets/images/bg_win_scene.png"/>
@@ -27,9 +28,9 @@
   </folder>
  </folder>
  <folder name="src">
-  <file source="src/button_simple.lua"/>
   <file source="src/background.lua"/>
   <file source="src/button.lua"/>
+  <file source="src/button_simple.lua"/>
   <file source="src/devil.lua"/>
   <file source="src/easing.lua"/>
   <file source="src/game_over_scene.lua"/>

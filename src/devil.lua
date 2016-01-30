@@ -52,7 +52,11 @@ function Devil:init(options)
 	local function onTimer()
 		if self.devil_mc then
 			local y = self.devil_mc:getY()
-			-- print(y, self.devil_y_pos)
+			
+			if conf.DEBUG then
+				print("y: " .. y, "devil_y_pos: " .. self.devil_y_pos)
+			end
+			
 			if y < self.devil_y_pos then
 				self.devil_mc:setY(y + 1)
 			end

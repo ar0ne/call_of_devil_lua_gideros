@@ -32,6 +32,11 @@ function LevelScene:init(options)
 		level = self,
 	}
 	
+	self.round_timer = Timer.new(1000, conf.ROUND_TIME)
+	
+	
+	self.round_timer:start()
+	
 	self:addChild(self.background)
 	self:addChild(self.pentagram)
 	self:addChild(self.moon)
@@ -43,6 +48,7 @@ function LevelScene:init(options)
 	self:addEventListener(Event.KEY_DOWN, self.onKeyDown, self)
 	self:addEventListener(Event.ENTER_FRAME, self.onEnterFrame, self)
 	self:addEventListener("TAP_ITEM", self.onTapItem, self)
+	self.round_timer:addEventListener(Event.TIMER_COMPLETE, self.onRoundEnd, self)
 
 end
 
@@ -64,7 +70,6 @@ function LevelScene:onTapItem(event)
 		self.devil:dispatchEvent(Event.new("CALL_DEVIL"))
 		
     end
-    
 end
 
 
@@ -76,5 +81,10 @@ function LevelScene:onKeyDown(event)
             sceneManager:changeScene("menu_scene", conf.TRANSITION_TIME,  SceneManager.fade, easing.inOutQuadratic)
         end
     end
+end
+
+function LevelScene:onRoundEnd()
+	self.devil.timer:stop()
+	sceneManager:changeScene("game_over_scene", conf.TRANSITION_TIME,  SceneManager.fade, easing.inOutQuadratic)
 end
 

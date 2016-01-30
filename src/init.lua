@@ -12,6 +12,7 @@ conf = {
 	SCORE_FONT_COLOR_HEX = 0xff0000,  -- red
 	
 	SOUND_ON_OFF_SCALE  = 0.15 * W,
+	ROUND_TIME 			= 2 * 60, -- 2 minutes
 	
 	ANDROID_PACKAGE_NAME = "org.arone.call_of_devil",
 
