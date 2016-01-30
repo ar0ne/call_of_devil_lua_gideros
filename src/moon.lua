@@ -42,7 +42,7 @@ function Moon:onEnterFrame()
 	
 	
 	
-	if x < -self.moon_width / 2 then
+	if x < - self.moon_width then
 		x = conf.WIDTH + self.moon_width
 	end
 		

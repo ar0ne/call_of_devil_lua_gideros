@@ -10,7 +10,7 @@ function LevelScene:init(options)
 		level = self,
 	}
 		
-	self.pentagrama = Pentagram.new {
+	self.pentagram = Pentagram.new {
 		level = self,
 	}
 	
@@ -24,9 +24,9 @@ function LevelScene:init(options)
 	}
 	
 	
-	--self:addChild(self.background)
+	self:addChild(self.background)
 	
-	self:addChild(self.pentagrama)
+	self:addChild(self.pentagram)
 	self:addChild(self.moon)
 	
 	
@@ -50,6 +50,10 @@ function LevelScene:onMouseDown(event)
         event:stopPropagation()
 
 		self.score:incrementCount()
+		
+		if self.score.count == 10 then
+			self.pentagram:openDoor()
+		end
     end
     
 end
