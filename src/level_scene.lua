@@ -9,11 +9,7 @@ function LevelScene:init(options)
 	self.background = Background.new {
 		level = self,
 	}
-	
-	self.church = Church.new {
-		level = self,
-	}
-	
+		
 	self.pentagrama = Pentagram.new {
 		level = self,
 	}
@@ -30,7 +26,6 @@ function LevelScene:init(options)
 	
 	--self:addChild(self.background)
 	
-	self:addChild(self.church)
 	self:addChild(self.pentagrama)
 	self:addChild(self.moon)
 	
