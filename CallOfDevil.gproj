@@ -1,14 +1,17 @@
 <project>
- <properties assetsOnly="0" win_org="GiderosMobile" encryptAssets="0" html5_host="" scaleMode="3" version="1.0" osx_domain="giderosmobile.com" retinaDisplay="0" ios_bundle="com.yourdomain." osx_org="GiderosMobile" windowWidth="0" orientation="1" logicalWidth="320" win_domain="giderosmobile.com" autorotation="0" touchToMouse="1" winrt_package="com.yourdomain.yourapp" architecture="0" osx_category="5" android_template="0" iosDevice="0" encryptCode="0" mouseTouchOrder="0" version_code="1" windowHeight="0" osx_bundle="com.yourdomain." winrt_org="GiderosMobile" fps="60" logicalHeight="480" mouseToTouch="1" packageName="com.yourdomain.yourapp">
+ <properties osx_category="5" autorotation="0" touchToMouse="1" logicalWidth="320" winrt_package="com.yourdomain.yourapp" encryptCode="0" windowWidth="0" retinaDisplay="0" packageName="com.yourdomain.yourapp" logicalHeight="480" win_domain="giderosmobile.com" version_code="1" assetsOnly="0" orientation="1" osx_bundle="com.yourdomain." ios_bundle="com.yourdomain." osx_org="GiderosMobile" fps="60" windowHeight="0" version="1.0" mouseTouchOrder="0" iosDevice="0" android_template="0" architecture="0" html5_host="" osx_domain="giderosmobile.com" scaleMode="3" winrt_org="GiderosMobile" mouseToTouch="1" win_org="GiderosMobile" encryptAssets="0">
   <imageScales/>
  </properties>
  <folder name="assets">
   <folder name="sounds"/>
   <folder name="images">
    <file source="assets/images/background.png"/>
+   <file source="assets/images/bg_win_scene.png"/>
+   <file source="assets/images/devil.png"/>
    <file source="assets/images/menu_button_start.png"/>
    <file source="assets/images/moon.png"/>
    <file source="assets/images/pentagram.png"/>
+   <file source="assets/images/retry_button.png"/>
   </folder>
   <folder name="fonts">
    <file source="assets/fonts/AmaticSC-Regular.ttf"/>
@@ -18,6 +21,7 @@
  <folder name="src">
   <file source="src/background.lua"/>
   <file source="src/button.lua"/>
+  <file source="src/devil.lua"/>
   <file source="src/easing.lua"/>
   <file source="src/game_over_scene.lua"/>
   <file source="src/init.lua"/>
@@ -31,16 +35,16 @@
   <file source="src/score.lua"/>
   <file source="src/win_scene.lua"/>
  </folder>
- <dependency from="src/main.lua" to="src/background.lua"/>
- <dependency from="src/main.lua" to="src/button.lua"/>
- <dependency from="src/main.lua" to="src/easing.lua"/>
- <dependency from="src/main.lua" to="src/game_over_scene.lua"/>
- <dependency from="src/main.lua" to="src/init.lua"/>
- <dependency from="src/main.lua" to="src/level_scene.lua"/>
- <dependency from="src/main.lua" to="src/menu_scene.lua"/>
- <dependency from="src/main.lua" to="src/moon.lua"/>
- <dependency from="src/main.lua" to="src/pentagram.lua"/>
- <dependency from="src/main.lua" to="src/scene_manager.lua"/>
- <dependency from="src/main.lua" to="src/score.lua"/>
- <dependency from="src/main.lua" to="src/win_scene.lua"/>
+ <dependency to="src/background.lua" from="src/main.lua"/>
+ <dependency to="src/button.lua" from="src/main.lua"/>
+ <dependency to="src/easing.lua" from="src/main.lua"/>
+ <dependency to="src/game_over_scene.lua" from="src/main.lua"/>
+ <dependency to="src/init.lua" from="src/main.lua"/>
+ <dependency to="src/level_scene.lua" from="src/main.lua"/>
+ <dependency to="src/menu_scene.lua" from="src/main.lua"/>
+ <dependency to="src/moon.lua" from="src/main.lua"/>
+ <dependency to="src/pentagram.lua" from="src/main.lua"/>
+ <dependency to="src/scene_manager.lua" from="src/main.lua"/>
+ <dependency to="src/score.lua" from="src/main.lua"/>
+ <dependency to="src/win_scene.lua" from="src/main.lua"/>
 </project>
