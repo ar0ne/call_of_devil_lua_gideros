@@ -1,5 +1,43 @@
 <project>
- <properties windowWidth="0" mouseToTouch="1" version="1.0" osx_domain="giderosmobile.com" logicalHeight="480" osx_category="5" logicalWidth="320" winrt_package="com.yourdomain.yourapp" assetsOnly="0" osx_org="GiderosMobile" html5_host="" iosDevice="0" orientation="0" encryptAssets="0" windowHeight="0" architecture="0" scaleMode="0" android_template="0" ios_bundle="com.yourdomain." version_code="1" retinaDisplay="0" packageName="com.yourdomain.yourapp" winrt_org="GiderosMobile" encryptCode="0" touchToMouse="1" autorotation="0" win_org="GiderosMobile" mouseTouchOrder="0" osx_bundle="com.yourdomain." win_domain="giderosmobile.com" fps="60">
+ <properties mouseToTouch="1" ios_bundle="com.yourdomain." windowHeight="0" logicalHeight="480" architecture="0" autorotation="0" packageName="com.yourdomain.yourapp" winrt_package="com.yourdomain.yourapp" mouseTouchOrder="0" windowWidth="0" osx_org="GiderosMobile" osx_category="5" html5_host="" touchToMouse="1" retinaDisplay="0" logicalWidth="320" version="1.0" encryptAssets="0" android_template="0" encryptCode="0" iosDevice="0" win_org="GiderosMobile" winrt_org="GiderosMobile" osx_bundle="com.yourdomain." win_domain="giderosmobile.com" scaleMode="3" assetsOnly="0" orientation="1" fps="60" osx_domain="giderosmobile.com" version_code="1">
   <imageScales/>
  </properties>
+ <folder name="assets">
+  <file source="assets/background.png"/>
+  <file source="assets/menu_button_start.png"/>
+ </folder>
+ <folder name="src">
+  <file source="src/background.lua"/>
+  <file source="src/button.lua"/>
+  <file source="src/candle.lua"/>
+  <file source="src/church.lua"/>
+  <file source="src/easing.lua"/>
+  <file source="src/game_over_scene.lua"/>
+  <file source="src/init.lua"/>
+  <file source="src/level_scene.lua"/>
+  <file source="src/main.lua"/>
+  <file source="src/menu_scene.lua"/>
+  <file source="src/moon.lua"/>
+  <file source="src/pentagram.lua"/>
+  <file source="src/rain.lua"/>
+  <file source="src/scene_manager.lua"/>
+  <file source="src/score.lua"/>
+  <file source="src/tree.lua"/>
+  <file source="src/win_scene.lua"/>
+ </folder>
+ <dependency to="src/candle.lua" from="src/main.lua"/>
+ <dependency to="src/church.lua" from="src/main.lua"/>
+ <dependency to="src/easing.lua" from="src/main.lua"/>
+ <dependency to="src/game_over_scene.lua" from="src/main.lua"/>
+ <dependency to="src/background.lua" from="src/main.lua"/>
+ <dependency to="src/button.lua" from="src/main.lua"/>
+ <dependency to="src/init.lua" from="src/main.lua"/>
+ <dependency to="src/level_scene.lua" from="src/main.lua"/>
+ <dependency to="src/menu_scene.lua" from="src/main.lua"/>
+ <dependency to="src/moon.lua" from="src/main.lua"/>
+ <dependency to="src/pentagram.lua" from="src/main.lua"/>
+ <dependency to="src/scene_manager.lua" from="src/main.lua"/>
+ <dependency to="src/score.lua" from="src/main.lua"/>
+ <dependency to="src/tree.lua" from="src/main.lua"/>
+ <dependency to="src/win_scene.lua" from="src/main.lua"/>
 </project>
