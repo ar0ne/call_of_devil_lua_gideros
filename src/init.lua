@@ -22,6 +22,10 @@ conf = {
 	
 	PLAY_BUTTON_SCALE 	= H / 4,
 	
+	ITEM_SCALE 			= 2,
+	
+	SPEED_ITEM_FRAME 	= 20,
+	
 	ANDROID_PACKAGE_NAME = "org.arone.call_of_devil",
 	GITHUB_REPOSITORY 	 = "call_of_devil_lua_gideros"
 
