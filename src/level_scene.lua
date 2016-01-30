@@ -29,16 +29,11 @@ function LevelScene:init(options)
 	}
 	
 	self:addChild(self.background)
-	
 	self:addChild(self.pentagram)
 	self:addChild(self.moon)
-	
 	self:addChild(self.devil)
-	
-	
 	self:addChild(self.score)
 	
-
 
 	self:addEventListener(Event.KEY_DOWN, self.onKeyDown, self)
 	self:addEventListener(Event.ENTER_FRAME, self.onEnterFrame, self)
@@ -52,26 +47,25 @@ function LevelScene:onEnterFrame()
 end
 
 function LevelScene:onMouseDown(event)
+	--event:stopPropagation()
     
     if not self.paused then
-        event:stopPropagation()
+        
+		self.pentagram:changeDoorStatus(self.devil.devil_mc:getY(), conf.HEIGHT - self.devil.devil_height/2)
 
-		self.score:incrementCount()
+		self.score:dispatchEvent(Event.new("INCREMENT_SCORE"))
 		
-		self.devil:callDevil()
+		self.devil:dispatchEvent(Event.new("CALL_DEVIL"))
 		
-		if self.score.count == 10 then
-			self.pentagram:openDoor()
-		end
     end
     
 end
 
 
 function LevelScene:onKeyDown(event)
+	event:stopPropagation()
     if event.keyCode == KeyCode.BACK then 
         if application:getDeviceInfo() == "Android" then
-			--Timer.pauseAllTimers()
 			self.devil.timer:stop()
             sceneManager:changeScene("menu_scene", conf.TRANSITION_TIME,  SceneManager.fade, easing.inOutQuadratic)
         end

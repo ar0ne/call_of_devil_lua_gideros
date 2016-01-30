@@ -10,6 +10,7 @@ function Score:init(options)
 	self:drawCount()
 
 	self:addEventListener(Event.ENTER_FRAME, self.onEnterFrame, self)
+	self:addEventListener("INCREMENT_SCORE", self.onIncrementScore, self)
 
 end
 
@@ -31,7 +32,7 @@ function Score:drawCount(count)
 	self:addChild(self.text)
 end
 
-function Score:incrementCount()
+function Score:onIncrementScore()
 
 	self.count = self.count + 1
 	self:drawCount()

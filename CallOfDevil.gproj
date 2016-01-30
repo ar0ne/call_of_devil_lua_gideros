@@ -6,6 +6,7 @@
   <folder name="sounds"/>
   <folder name="images">
    <file source="assets/images/background.png"/>
+   <file source="assets/images/bg_menu_scene.png"/>
    <file source="assets/images/bg_win_scene.png"/>
    <file source="assets/images/devil.png"/>
    <file source="assets/images/menu_button_start.png"/>

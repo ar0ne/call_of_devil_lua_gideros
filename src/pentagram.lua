@@ -35,6 +35,7 @@ function Pentagram:init(options)
 		5 * speed_frame + 1, -- 101 | 6
 	}
 	
+	self.state = 1
 	
 	self.pentagram_mc = MovieClip.new{
 		{ self.positions[1], 		speed_frame, 	anim[1]},
@@ -44,9 +45,7 @@ function Pentagram:init(options)
 		{ self.positions[5], 	5 * speed_frame,  	anim[5]},
 		{ self.positions[6], 	6 * speed_frame, 	anim[6]},
 	}
-	
-	self.rateDoor = 1
-	
+		
 	self.pentagram_mc:gotoAndPlay(1)
 	
 	self.pentagram_mc:setGotoAction(2 * speed_frame, self.positions[1])
@@ -59,12 +58,26 @@ function Pentagram:init(options)
 
 end
 
-function Pentagram:openDoor()
-	self.rateDoor = self.rateDoor + 2
-	self.pentagram_mc:gotoAndPlay(self.positions[self.rateDoor])
-end
+function Pentagram:changeDoorStatus(cur_y, min_y)
 
-function Pentagram:closeDoor()
-	self.rateDoor = self.rateDoor - 2
-	self.pentagram_mc:gotoAndPlay(self.positions[self.rateDoor])
+	print(cur_y, min_y)
+	
+	local diff = cur_y - min_y
+	if diff > 150 then
+		if self.state ~= 1 then
+			self.pentagram_mc:gotoAndPlay(self.positions[1])
+			self.state = 1
+		end
+	elseif diff <= 150 and diff > 100 then
+		if self.state ~= 2 then
+			self.pentagram_mc:gotoAndPlay(self.positions[3])
+			self.state = 2
+		end
+	elseif diff > 50 then 
+		if self.state ~= 3 then
+			self.pentagram_mc:gotoAndPlay(self.positions[5])
+			self.state = 3
+		end
+	end
+	
 end

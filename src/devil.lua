@@ -49,7 +49,7 @@ function Devil:init(options)
 
 	self.timer:start()
 	
-	local function onTimer(event)
+	local function onTimer()
 		if self.devil_mc then
 			local y = self.devil_mc:getY()
 			-- print(y, self.devil_y_pos)
@@ -61,6 +61,7 @@ function Devil:init(options)
 	 
 	 
 	self.timer:addEventListener(Event.TIMER, onTimer)
+	self:addEventListener("CALL_DEVIL", self.onCallDevil, self)
 end
 
 
@@ -68,7 +69,8 @@ function Devil:onEnterFrame()
 
 end
 
-function Devil:callDevil()
+function Devil:onCallDevil(event)
+	event:stopPropagation()
 	local y = self.devil_mc:getY()
 	if y <= self.devil_y_pos then
 		if y <= self.devil_out then
