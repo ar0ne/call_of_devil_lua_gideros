@@ -4,7 +4,12 @@ function LevelScene:init(options)
 
 	self.level_height 	= conf.HEIGHT
 	self.level_width 	= conf.WIDTH
+	
 	self.paused 		= false
+	
+	self.isSoundEnabled = options and options.isSoundEnabled or true
+	self.isHardMode 	= options and options.isHardMode or true
+	
 
 	self.background = Background.new {
 		level = self,
@@ -26,6 +31,8 @@ function LevelScene:init(options)
 	
 	self.devil = Devil.new {
 		level = self,
+		isSoundEnabled = self.isSoundEnabled,
+		isHardMode = self.isHardMode,
 	}
 	
 	self.items = Items.new {
@@ -44,7 +51,7 @@ function LevelScene:init(options)
 	self:addChild(self.devil)
 	self:addChild(self.score)
 	
-
+	
 	self:addEventListener(Event.KEY_DOWN, self.onKeyDown, self)
 	self:addEventListener(Event.ENTER_FRAME, self.onEnterFrame, self)
 	self:addEventListener("TAP_ITEM", self.onTapItem, self)
@@ -78,13 +85,24 @@ function LevelScene:onKeyDown(event)
     if event.keyCode == KeyCode.BACK then 
         if application:getDeviceInfo() == "Android" then
 			self.devil.timer:stop()
-            sceneManager:changeScene("menu_scene", conf.TRANSITION_TIME,  SceneManager.fade, easing.inOutQuadratic)
+			self.round_timer:stop()
+            sceneManager:changeScene("menu_scene", conf.TRANSITION_TIME,  SceneManager.fade, easing.inOutQuadratic, {
+				userData = {
+					isSoundEnabled 	= self.isSoundEnabled,
+					isHardMode 		= self.isHardMode,
+				}
+			})
         end
     end
 end
 
 function LevelScene:onRoundEnd()
 	self.devil.timer:stop()
-	sceneManager:changeScene("game_over_scene", conf.TRANSITION_TIME,  SceneManager.fade, easing.inOutQuadratic)
+	sceneManager:changeScene("game_over_scene", conf.TRANSITION_TIME,  SceneManager.fade, easing.inOutQuadratic, {
+		userData = {
+			isSoundEnabled 	= self.isSoundEnabled,
+			isHardMode 		= self.isHardMode,
+		}
+	})
 end
 

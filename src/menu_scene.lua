@@ -1,9 +1,9 @@
 MenuScene = MenuScene or Core.class(Sprite)
 
-function MenuScene:init()
+function MenuScene:init(options)
 
-	self.isSoundEnabled = true
-	self.isHardMode = true
+	self.isSoundEnabled = options and options.isSoundEnabled or true
+	self.isHardMode = options and options.isHardMode or true
 
 	local bg = Bitmap.new(Texture.new("assets/images/bg_menu_scene.png"))
 	bg:setAnchorPoint(0.5, 0.5)
@@ -21,9 +21,13 @@ function MenuScene:init()
 	
 	start_button:addEventListener("click", 
 		function() 
-			sceneManager:changeScene("level_scene", conf.TRANSITION_TIME,  SceneManager.fade, easing.inOutQuadratic)
+			sceneManager:changeScene("level_scene", conf.TRANSITION_TIME,  SceneManager.fade, easing.inOutQuadratic, {
+				userData = {
+					isSoundEnabled 	= self.isSoundEnabled,
+					isHardMode 		= self.isHardMode,
+				}
+			})
 		end)
-		
 		
 	local game_mode_texture = Texture.new("assets/images/settings_button.png")
 	self.game_mode_texture_easy = Bitmap.new(TextureRegion.new(game_mode_texture, 0, 0, 70, 40))
@@ -89,12 +93,11 @@ function MenuScene:init()
         end
     end)
 
-	
 	self:addEventListener(Event.KEY_DOWN, self.onKeyDown, self)
 	
 	self:addChild(bg)
 	self:addChild(start_button)
-	self:addChild(self.game_mode_button)
+	--self:addChild(self.game_mode_button)
 	self:addChild(self.sound_button)
 
 end

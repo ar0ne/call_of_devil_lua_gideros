@@ -14,6 +14,9 @@ conf = {
 	SOUND_ON_OFF_SCALE  = 0.15 * W,
 	ROUND_TIME 			= 2 * 60, -- 2 minutes
 	
+	MOON_SCALE 			= 1,
+	DEVIL_SPEED_FRAME 	= 20,
+	
 	ANDROID_PACKAGE_NAME = "org.arone.call_of_devil",
 
 }

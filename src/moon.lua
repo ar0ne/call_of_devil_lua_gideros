@@ -11,7 +11,7 @@ function Moon:init(options)
 		Bitmap.new(TextureRegion.new(spritesheet, 0, 0, 100, 100)),
 	}
 	
-	local scale = 1
+	local scale = conf.MOON_SCALE
 	
 	for i = 1, #anim do
         anim[i]:setAnchorPoint(0.5, 0.5)
@@ -39,8 +39,6 @@ end
 function Moon:onEnterFrame()
 	
 	local x, y = self.moon_mc:getX(), self.moon_mc:getY()
-	
-	
 	
 	if x < - self.moon_width then
 		x = conf.WIDTH + self.moon_width

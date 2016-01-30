@@ -2,6 +2,9 @@ WinScene = WinScene or Core.class(Sprite)
 
 function WinScene:init(options)
 
+	self.isSoundEnabled = options and options.isSoundEnabled or true
+	self.isHardMode = options and options.isHardMode or true
+
 	local bg = Bitmap.new(Texture.new("assets/images/bg_win_scene.png"))
 	bg:setAnchorPoint(0.5, 0.5)
 	bg:setScale(conf.WIDTH / bg:getWidth() * 1.2, 1)
@@ -18,7 +21,12 @@ function WinScene:init(options)
 	
 	retry_button:addEventListener("click", 
 		function() 
-			sceneManager:changeScene("menu_scene", conf.TRANSITION_TIME,  SceneManager.fade, easing.inOutQuadratic)
+			sceneManager:changeScene("menu_scene", conf.TRANSITION_TIME,  SceneManager.fade, easing.inOutQuadratic, {
+				userData = {
+					isSoundEnabled 	= self.isSoundEnabled,
+					isHardMode 		= self.isHardMode,
+				}
+			})
 		end)
 	
 	self:addChild(bg)

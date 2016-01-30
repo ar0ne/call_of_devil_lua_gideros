@@ -3,7 +3,11 @@ Devil = Devil or Core.class(Sprite)
 function Devil:init(options)
 
 	self.level = options.level
-	
+	self.isHardMode = options.isHardMode
+	self.isSoundEnabled = options.isSoundEnabled
+		
+	self.devil_speed = 1
+
 	local spritesheet = Texture.new("assets/images/devil.png")
 	
 	local anim = {
@@ -21,7 +25,7 @@ function Devil:init(options)
 	self.devil_width = anim[1]:getWidth()
 	self.devil_height = anim[1]:getHeight()
 	
-	local speed_frame = 20
+	local speed_frame = conf.DEVIL_SPEED_FRAME
 	
 	self.positions = {
 		1,
@@ -79,9 +83,15 @@ function Devil:onCallDevil(event)
 	if y <= self.devil_y_pos then
 		if y <= self.devil_out then
 			self.timer:stop()
-			sceneManager:changeScene("win_scene", conf.TRANSITION_TIME,  SceneManager.fade, easing.inOutQuadratic)
+			self.level.round_timer:stop()
+			sceneManager:changeScene("win_scene", conf.TRANSITION_TIME,  SceneManager.fade, easing.inOutQuadratic, {
+				userData = {
+					isSoundEnabled 	= self.isSoundEnabled,
+					isHardMode 		= self.isHardMode,
+				}
+			})
 		end
-		self.devil_mc:setY(y - 1)
+		self.devil_mc:setY(y - self.devil_speed)
 	end
 end
 
