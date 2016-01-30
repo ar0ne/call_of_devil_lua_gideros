@@ -1,7 +1,5 @@
 if not (initialized) then
 
-	--require "box2d"
-
 	sceneManager = SceneManager.new({
 		["level_scene"]       	= LevelScene,
 		["game_over_scene"]   	= GameOverScene,

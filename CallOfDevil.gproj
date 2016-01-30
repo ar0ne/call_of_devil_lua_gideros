@@ -7,6 +7,7 @@
   <folder name="images">
    <file source="assets/images/background.png"/>
    <file source="assets/images/bg_menu_scene.png"/>
+   <file source="assets/images/bg_settings_scene.png"/>
    <file source="assets/images/bg_win_scene.png"/>
    <file source="assets/images/devil.png"/>
    <file source="assets/images/item1.png"/>
@@ -15,13 +16,18 @@
    <file source="assets/images/moon.png"/>
    <file source="assets/images/pentagram.png"/>
    <file source="assets/images/retry_button.png"/>
+   <file source="assets/images/settings_button.png"/>
+   <file source="assets/images/sound_off.png"/>
+   <file source="assets/images/sound_on.png"/>
   </folder>
   <folder name="fonts">
+   <file source="assets/fonts/BEBAS___.ttf"/>
    <file source="assets/fonts/AmaticSC-Regular.ttf"/>
    <file source="assets/fonts/Amatic-Bold.ttf"/>
   </folder>
  </folder>
  <folder name="src">
+  <file source="src/button_simple.lua"/>
   <file source="src/background.lua"/>
   <file source="src/button.lua"/>
   <file source="src/devil.lua"/>
@@ -39,6 +45,7 @@
   <file source="src/score.lua"/>
   <file source="src/win_scene.lua"/>
  </folder>
+ <dependency to="src/devil.lua" from="src/main.lua"/>
  <dependency to="src/background.lua" from="src/main.lua"/>
  <dependency to="src/button.lua" from="src/main.lua"/>
  <dependency to="src/easing.lua" from="src/main.lua"/>
@@ -48,7 +55,9 @@
  <dependency to="src/menu_scene.lua" from="src/main.lua"/>
  <dependency to="src/moon.lua" from="src/main.lua"/>
  <dependency to="src/pentagram.lua" from="src/main.lua"/>
+ <dependency to="src/rain.lua" from="src/main.lua"/>
  <dependency to="src/scene_manager.lua" from="src/main.lua"/>
  <dependency to="src/score.lua" from="src/main.lua"/>
  <dependency to="src/win_scene.lua" from="src/main.lua"/>
+ <dependency to="src/items.lua" from="src/main.lua"/>
 </project>

@@ -23,10 +23,14 @@ function Items:init(options)
 	
 	self.item1_button:addEventListener("click", 
 		function() 
-			print("clicked 1")
+
 			local state_1 = self.item1_button:contains(self.item1_button.upState)
 			local state_2 = self.item2_button:contains(self.item2_button.upState)
-			print(state_1, state_2)
+			
+			if conf.DEBUG then 
+				print("clicked 1") 
+				print(state_1, state_2)
+			end
 			
 			self.item1_button:updateVisualState(not state_1)
 			self.item2_button:updateVisualState(state_2)
@@ -55,10 +59,13 @@ function Items:init(options)
 	
 	self.item2_button:addEventListener("click", 
 		function() 
-			print("item 2")
 			local state_1 = self.item1_button:contains(self.item1_button.upState)
 			local state_2 = self.item2_button:contains(self.item2_button.upState)
-			print(state_1, state_2)
+			
+			if conf.DEBUG then 
+				print("clicked 2") 
+				print(state_1, state_2)
+			end
 			
 			self.item1_button:updateVisualState(state_1)
 			self.item2_button:updateVisualState(not state_2)
@@ -80,72 +87,5 @@ function Items:init(options)
 	self:addChild(self.item1_button)
 	self:addChild(self.item2_button)
 	
-
---[[
-	local spritesheet_item_1 = Texture.new("assets/images/item1.png")
-	
-	local anim = {
-		Bitmap.new(TextureRegion.new(spritesheet_item_1,  0, 0, 50, 50)),
-		Bitmap.new(TextureRegion.new(spritesheet_item_1, 50, 0, 50, 50)),
-	}
-	
-	for i = 1, #anim do
-        anim[i]:setAnchorPoint(0.5, 0.5)
-        anim[i]:setScale(scale, scale)
-    end
-	
-
-	
-	self.item1_mc = MovieClip.new{
-		{ 1,  20, 	anim[1]},
-		{ 21, 40,   anim[2]},	
-	}
-	
-	self.item1_mc:setGotoAction(20, 1)
-	self.item1_mc:setGotoAction(40, 21)
-	
-	self.item1_mc:gotoAndPlay(1)
-	
-	
-	
-	
-	local spritesheet_item_2 = Texture.new("assets/images/item2.png")
-	
-	local anim = {
-		Bitmap.new(TextureRegion.new(spritesheet_item_2,  0, 0, 50, 50)),
-		Bitmap.new(TextureRegion.new(spritesheet_item_2, 50, 0, 50, 50)),
-	}
-
-	for i = 1, #anim do
-        anim[i]:setAnchorPoint(0.5, 0.5)
-        anim[i]:setScale(scale, scale)
-    end
-		
-	
-	self.item2_mc = MovieClip.new{
-		{ 1,  20, 	anim[1]},
-		{ 21, 40,   anim[2]},	
-	}
-	
-	self.item2_mc:setGotoAction(20, 1)
-	self.item2_mc:setGotoAction(40, 21)
-	
-	self.item2_mc:gotoAndPlay(1)
-	
-
-
-	self.item_height = anim[1]:getHeight()
-	self.item_width  = anim[1]:getWidth()
-	
-	self.item1_mc:setPosition(self.item_width / 2, conf.MID_HEIGHT * 1 / 3)
-	self.item2_mc:setPosition(conf.WIDTH - self.item_width / 2, conf.MID_HEIGHT * 1 / 3)
-	
-	--self.item1_mc:addEventListener(Event.
-	
-	
-	self:addChild(self.item1_mc)
-	self:addChild(self.item2_mc)
-	
---]]
 	
 end

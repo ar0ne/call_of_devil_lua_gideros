@@ -5,6 +5,7 @@ function Score:init(options)
 	self.level = options.level
 	self.count = options.count or 0
 	
+	-- BEBAS___.ttf
 	self.font = TTFont.new("assets/fonts/Amatic-Bold.ttf", conf.FONT_SIZE)
 	
 	self:drawCount()
@@ -16,11 +17,11 @@ end
 
 function Score:onEnterFrame()
 	
-	
 end
 
 
 function Score:drawCount(count)
+
 	if self.text then
 		self:removeChild(self.text)
 	end
