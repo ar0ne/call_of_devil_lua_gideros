@@ -5,8 +5,9 @@
  <folder name="assets">
   <folder name="sounds"/>
   <folder name="images">
-   <file source="assets/images/menu_button_start.png"/>
    <file source="assets/images/background.png"/>
+   <file source="assets/images/menu_button_start.png"/>
+   <file source="assets/images/moon.png"/>
   </folder>
   <folder name="fonts">
    <file source="assets/fonts/AmaticSC-Regular.ttf"/>

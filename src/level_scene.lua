@@ -23,12 +23,16 @@ function LevelScene:init(options)
 		count = 0,
 	}
 	
+	self.moon = Moon.new {
+		level = self,
+	}
+	
 	
 	--self:addChild(self.background)
 	
 	self:addChild(self.church)
 	self:addChild(self.pentagrama)
-	
+	self:addChild(self.moon)
 	
 	
 	self:addChild(self.score)
