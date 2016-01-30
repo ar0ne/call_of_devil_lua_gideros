@@ -23,7 +23,6 @@ function MenuScene:init(options)
 	
 	self:addEventListener(Event.KEY_DOWN, self.onKeyDown, self)
 	
-	
 	self:addChild(bg)
 	self:addChild(start_button)
 

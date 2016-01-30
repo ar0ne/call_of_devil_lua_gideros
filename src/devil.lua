@@ -43,7 +43,7 @@ function Devil:init(options)
 
 	self:addChild(self.devil_mc)
 	
-	self.timer = Timer.new(1000, 1000)
+	self.timer = Timer.new(500, 1000)
 	
 	--self:addEventListener(Event.ENTER_FRAME, self.onEnterFrame, self)
 

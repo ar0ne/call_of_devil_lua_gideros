@@ -9,6 +9,8 @@
    <file source="assets/images/bg_menu_scene.png"/>
    <file source="assets/images/bg_win_scene.png"/>
    <file source="assets/images/devil.png"/>
+   <file source="assets/images/item1.png"/>
+   <file source="assets/images/item2.png"/>
    <file source="assets/images/menu_button_start.png"/>
    <file source="assets/images/moon.png"/>
    <file source="assets/images/pentagram.png"/>
@@ -26,6 +28,7 @@
   <file source="src/easing.lua"/>
   <file source="src/game_over_scene.lua"/>
   <file source="src/init.lua"/>
+  <file source="src/items.lua"/>
   <file source="src/level_scene.lua"/>
   <file source="src/main.lua"/>
   <file source="src/menu_scene.lua"/>

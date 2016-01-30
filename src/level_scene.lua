@@ -28,16 +28,21 @@ function LevelScene:init(options)
 		level = self,
 	}
 	
+	self.items = Items.new {
+		level = self,
+	}
+	
 	self:addChild(self.background)
 	self:addChild(self.pentagram)
 	self:addChild(self.moon)
+	self:addChild(self.items)
 	self:addChild(self.devil)
 	self:addChild(self.score)
 	
 
 	self:addEventListener(Event.KEY_DOWN, self.onKeyDown, self)
 	self:addEventListener(Event.ENTER_FRAME, self.onEnterFrame, self)
-	self:addEventListener(Event.MOUSE_DOWN, self.onMouseDown, self)
+	self:addEventListener("TAP_ITEM", self.onTapItem, self)
 
 end
 
@@ -46,8 +51,9 @@ function LevelScene:onEnterFrame()
 	
 end
 
-function LevelScene:onMouseDown(event)
-	--event:stopPropagation()
+function LevelScene:onTapItem(event)
+
+	event:stopPropagation()
     
     if not self.paused then
         
