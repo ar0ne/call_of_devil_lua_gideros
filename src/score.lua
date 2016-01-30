@@ -5,8 +5,7 @@ function Score:init(options)
 	self.level = options.level
 	self.count = options.count or 0
 	
-	-- BEBAS___.ttf
-	self.font = TTFont.new("assets/fonts/Amatic-Bold.ttf", conf.FONT_SIZE)
+	self.font = TTFont.new("assets/fonts/pixelart.ttf", conf.FONT_SIZE)
 	
 	self:drawCount()
 

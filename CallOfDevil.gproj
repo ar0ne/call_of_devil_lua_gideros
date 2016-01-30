@@ -23,9 +23,7 @@
    <file source="assets/images/sound_on.png"/>
   </folder>
   <folder name="fonts">
-   <file source="assets/fonts/BEBAS___.ttf"/>
-   <file source="assets/fonts/AmaticSC-Regular.ttf"/>
-   <file source="assets/fonts/Amatic-Bold.ttf"/>
+   <file source="assets/fonts/pixelart.ttf"/>
   </folder>
  </folder>
  <folder name="src">
