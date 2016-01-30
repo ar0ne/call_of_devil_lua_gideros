@@ -3,8 +3,15 @@
   <imageScales/>
  </properties>
  <folder name="assets">
-  <file source="assets/background.png"/>
-  <file source="assets/menu_button_start.png"/>
+  <folder name="sounds"/>
+  <folder name="images">
+   <file source="assets/images/menu_button_start.png"/>
+   <file source="assets/images/background.png"/>
+  </folder>
+  <folder name="fonts">
+   <file source="assets/fonts/AmaticSC-Regular.ttf"/>
+   <file source="assets/fonts/Amatic-Bold.ttf"/>
+  </folder>
  </folder>
  <folder name="src">
   <file source="src/background.lua"/>

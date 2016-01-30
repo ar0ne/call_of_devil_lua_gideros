@@ -2,7 +2,7 @@ MenuScene = MenuScene or Core.class(Sprite)
 
 function MenuScene:init(options)
 	
-	local start_button_texture = Bitmap.new(Texture.new("assets/menu_button_start.png"))
+	local start_button_texture = Bitmap.new(Texture.new("assets/images/menu_button_start.png"))
 	start_button_texture:setAnchorPoint(0.5, 0.5)
 	
 	local start_button_scale = conf.WIDTH / 2 / start_button_texture:getWidth()
