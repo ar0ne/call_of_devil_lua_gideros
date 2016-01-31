@@ -6,7 +6,7 @@ function Devil:init(options)
 	self.isHardMode = options.isHardMode
 	self.isSoundEnabled = options.isSoundEnabled
 		
-	self.devil_speed = 1
+	self.devil_speed = conf.DEVIL_SPEED
 
 	local spritesheet = Texture.new("assets/images/devil.png")
 	
