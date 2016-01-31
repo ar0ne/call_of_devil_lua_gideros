@@ -12,7 +12,7 @@ conf = {
 	SCORE_FONT_COLOR_HEX = 0xff0000,  -- red
 	
 	SOUND_ON_OFF_SCALE  = 0.15 * W,
-	ROUND_TIME 			= 2 * 60, -- 2 minutes
+	ROUND_TIME 			= 2 * 10, -- 2 minutes
 	
 	MOON_SCALE 			= 1,
 	DEVIL_SPEED_FRAME 	= 20,

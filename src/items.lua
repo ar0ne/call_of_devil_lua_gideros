@@ -124,7 +124,6 @@ function Items:init(options)
 		end)
 			
 		
-	
 	-- init 
 	self.item1_button:updateVisualState(true)
 	

@@ -18,7 +18,7 @@ function GameOverScene:init(options)
 	retry_button_texture:setScale(retry_button_scale, retry_button_scale)
 		
 	local retry_button = Button.new(retry_button_texture, retry_button_texture)
-	retry_button:setPosition(conf.MID_WIDTH, conf.MID_HEIGHT)
+	retry_button:setPosition(conf.MID_WIDTH, conf.HEIGHT * 2 / 3)
 	
 	retry_button:addEventListener("click", 
 		function() 
