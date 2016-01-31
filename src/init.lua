@@ -7,7 +7,7 @@ conf = {
 	MID_WIDTH 			= W/2,
 	MID_HEIGHT			= H/2,
     TRANSITION_TIME     = 1,
-	DEBUG 				= true,
+	DEBUG 				= false,
 	FONT_SIZE 			= H / 8,
 	SCORE_FONT_COLOR_HEX = 0xff0000,  -- red
 	

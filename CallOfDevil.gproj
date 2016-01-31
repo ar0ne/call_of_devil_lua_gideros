@@ -1,5 +1,5 @@
 <project>
- <properties osx_category="5" autorotation="0" touchToMouse="1" logicalWidth="320" winrt_package="com.yourdomain.yourapp" encryptCode="0" windowWidth="0" retinaDisplay="0" packageName="com.yourdomain.yourapp" logicalHeight="480" win_domain="giderosmobile.com" version_code="1" assetsOnly="0" orientation="1" osx_bundle="com.yourdomain." ios_bundle="com.yourdomain." osx_org="GiderosMobile" fps="60" windowHeight="0" version="1.0" mouseTouchOrder="0" iosDevice="0" android_template="0" architecture="0" html5_host="" osx_domain="giderosmobile.com" scaleMode="3" winrt_org="GiderosMobile" mouseToTouch="1" win_org="GiderosMobile" encryptAssets="0">
+ <properties osx_category="5" autorotation="0" touchToMouse="1" logicalWidth="320" winrt_package="com.yourdomain.yourapp" encryptCode="0" windowWidth="0" retinaDisplay="0" packageName="com.ar0ne.call_of_devil" logicalHeight="480" win_domain="giderosmobile.com" version_code="1" assetsOnly="0" orientation="1" osx_bundle="com.yourdomain." ios_bundle="com.yourdomain." osx_org="GiderosMobile" fps="60" windowHeight="0" version="1.0" mouseTouchOrder="0" iosDevice="0" android_template="0" architecture="1" html5_host="" osx_domain="giderosmobile.com" scaleMode="3" winrt_org="GiderosMobile" mouseToTouch="1" win_org="GiderosMobile" encryptAssets="0">
   <imageScales/>
  </properties>
  <folder name="assets">

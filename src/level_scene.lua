@@ -45,8 +45,8 @@ function LevelScene:init(options)
 	self.round_timer = Timer.new(1000, conf.ROUND_TIME)
 	
 	if self.isSoundEnabled then 
-		self.gametune = Sound.new("assets/sounds/gametune.mp3")
-		self.gametune:play()
+		local gametune = Sound.new("assets/sounds/gametune.mp3")
+		self.channel = gametune:play()
 	end
 	
 	
@@ -95,7 +95,9 @@ function LevelScene:onKeyDown(event)
         if application:getDeviceInfo() == "Android" then
 			self.devil.timer:stop()
 			self.round_timer:stop()
-			self.gametune:stop()
+			if self.channel  then 
+				self.channel :stop()
+			end
             sceneManager:changeScene("menu_scene", conf.TRANSITION_TIME,  SceneManager.fade, easing.inOutQuadratic, {
 				userData = {
 					isSoundEnabled 	= self.isSoundEnabled,
@@ -108,7 +110,9 @@ end
 
 function LevelScene:onRoundEnd()
 	self.devil.timer:stop()
-	self.gametune:stop()
+	if self.channel  then 
+		self.channel:stop()
+	end
 	sceneManager:changeScene("game_over_scene", conf.TRANSITION_TIME,  SceneManager.fade, easing.inOutQuadratic, {
 		userData = {
 			isSoundEnabled 	= self.isSoundEnabled,
