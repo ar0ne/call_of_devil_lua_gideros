@@ -3,7 +3,9 @@
   <imageScales/>
  </properties>
  <folder name="assets">
-  <folder name="sounds"/>
+  <folder name="sounds">
+   <file source="assets/sounds/gametune.mp3"/>
+  </folder>
   <folder name="images">
    <file source="assets/images/background.png"/>
    <file source="assets/images/bg_game_over_scene.png"/>
