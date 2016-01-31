@@ -17,7 +17,7 @@ conf = {
 	MOON_SCALE 			= 1,
 	DEVIL_SPEED_FRAME 	= 20,
 	
-	DEVIL_SPEED 		= 10,
+	DEVIL_SPEED 		= 1,
 	
 	BUTTON_GITHUB_SCALE = W/5,
 	MENU_BUTTON_BOTTOM_OFFSET = H / 6,
@@ -27,6 +27,9 @@ conf = {
 	ITEM_SCALE 			= 2,
 	
 	SPEED_ITEM_FRAME 	= 20,
+	
+	RAIN_SCALE 			= 1.2,
+	SPEED_RAIN_FRAME 	= 10,
 	
 	ANDROID_PACKAGE_NAME = "org.arone.call_of_devil",
 	GITHUB_REPOSITORY 	 = "call_of_devil_lua_gideros"

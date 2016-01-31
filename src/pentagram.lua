@@ -4,7 +4,7 @@ function Pentagram:init(options)
 
 	self.level = options.level
 	
-	local spritesheet = Texture.new("assets/images/pentagram.png")
+	local spritesheet = Texture.new("assets/images/pentagram2.png")
 	
 	local anim = {
 		Bitmap.new(TextureRegion.new(spritesheet,   0, 0, 100, 100)),
@@ -15,7 +15,7 @@ function Pentagram:init(options)
 		Bitmap.new(TextureRegion.new(spritesheet, 500, 0, 100, 100)),
 	}
 	
-	local scale = 2
+	local scale = 1.5
 	
 	for i = 1, #anim do
         anim[i]:setAnchorPoint(0.5, 0.5)
@@ -52,7 +52,7 @@ function Pentagram:init(options)
 	self.pentagram_mc:setGotoAction(4 * speed_frame, self.positions[3])
 	self.pentagram_mc:setGotoAction(6 * speed_frame, self.positions[5])
 	
-	self.pentagram_mc:setPosition(conf.MID_WIDTH, conf.HEIGHT / 3 * 2)
+	self.pentagram_mc:setPosition(conf.MID_WIDTH, conf.HEIGHT / 4 * 3)
 	
 	self:addChild(self.pentagram_mc)
 
