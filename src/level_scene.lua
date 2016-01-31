@@ -44,9 +44,9 @@ function LevelScene:init(options)
 	
 	self.round_timer:start()
 	
+	self:addChild(self.moon)
 	self:addChild(self.background)
 	self:addChild(self.pentagram)
-	self:addChild(self.moon)
 	self:addChild(self.items)
 	self:addChild(self.devil)
 	self:addChild(self.score)
